@@ -84,8 +84,8 @@ class choria::repo (
       release       => $repo_os_name,
       repos         => $release,
       key           => {
-        name   => "choria.asc",
-        source => "https://choria.io/RELEASE-GPG-KEY"
+        name    => "choria.asc",
+        content => file("${module_name}/RELEASE-GPG-KEY"),
       },
       architecture  => $facts["os"]["architecture"],
       before        => Package[$choria::package_name],
