@@ -71,6 +71,7 @@ class choria::repo (
 
     $repo_os_name = $facts["os"]["distro"]["id"] ? {
       'Neon'      => 'ubuntu',
+      'Pop'       => 'ubuntu',
       'linuxmint' => 'ubuntu',
       default     => $facts["os"]["name"].downcase,
     }
